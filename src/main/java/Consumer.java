@@ -2,6 +2,7 @@
 import com.rabbitmq.client.*;
 
 import java.io.IOException;
+import java.util.Properties;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -12,6 +13,7 @@ public class Consumer {
     final static private int NUMTHREADS = 200;
     private static String host = "54.244.11.31";
     public static void main(String[] args) throws Exception {
+
 
         Connection connection = Consumer.getConnection();
         ExecutorService pool = Executors.newFixedThreadPool(NUMTHREADS);
