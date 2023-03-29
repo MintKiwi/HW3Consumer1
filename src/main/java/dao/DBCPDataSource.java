@@ -31,7 +31,7 @@ public class DBCPDataSource {
             e.printStackTrace();
         }
         String url = String.format("jdbc:mysql://%s:%s/%s?serverTimezone=UTC", properties.getProperty("MySQL_IP_ADDRESS"), properties.getProperty("MySQL_PORT"), properties.getProperty("DATABASE"));
-        dataSource.setUrl(url);
+        dataSource.setUrl(url+"&rewriteBatchedStatements=true");
         dataSource.setUsername(properties.getProperty("DB_USERNAME"));
         dataSource.setPassword(properties.getProperty("DB_PASSWORD"));
         dataSource.setInitialSize(10);
